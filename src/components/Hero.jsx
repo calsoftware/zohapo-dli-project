@@ -43,7 +43,7 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-4">
             <button
-              onClick={() => scrollTo("why")}
+              onClick={() => scrollTo("research")}
               className="focus-ring inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-violet px-6 py-3.5 text-sm font-semibold shadow-glow transition-transform hover:-translate-y-0.5"
             >
               Explore the LX Design Plan
