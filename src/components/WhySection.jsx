@@ -60,7 +60,7 @@ export default function WhySection() {
         </div>
 
         <div className="mt-10 overflow-hidden rounded-xl2 border border-slate-200 shadow-card">
-          <div className="grid grid-cols-2 bg-ink-900 text-white">
+          <div className="hidden bg-ink-900 text-white sm:grid sm:grid-cols-2">
             <p className="px-5 py-3 font-display text-sm font-bold sm:px-6">Current Position</p>
             <p className="border-l border-white/10 px-5 py-3 font-display text-sm font-bold sm:px-6">
               Target Position After Zohapo
@@ -73,12 +73,20 @@ export default function WhySection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+              className={`flex flex-col gap-3 p-5 sm:grid sm:grid-cols-2 sm:gap-0 sm:p-0 ${i % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
             >
-              <p className="px-5 py-4 text-sm leading-relaxed text-slate-600 sm:px-6">{row.before}</p>
-              <p className="border-l border-slate-200 px-5 py-4 text-sm font-medium leading-relaxed text-ink-900 sm:px-6">
-                {row.after}
-              </p>
+              <div className="sm:px-6 sm:py-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 sm:hidden">
+                  Current Position
+                </p>
+                <p className="text-sm leading-relaxed text-slate-600">{row.before}</p>
+              </div>
+              <div className="sm:border-l sm:border-slate-200 sm:px-6 sm:py-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 sm:hidden">
+                  Target Position After Zohapo
+                </p>
+                <p className="text-sm font-medium leading-relaxed text-ink-900">{row.after}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -95,8 +103,8 @@ export default function WhySection() {
             const [verb, ...rest] = outcome.split(" ");
             return (
               <Card key={outcome} delay={i * 0.05} className="flex gap-3">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 font-display text-sm font-bold text-brand-teal">
-                  {i + 1}
+                <span className="flex h-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 px-2.5 font-display text-sm font-bold text-brand-teal">
+                  LO{i + 1}
                 </span>
                 <p className="text-sm leading-relaxed text-slate-700">
                   <span className="font-display font-bold text-ink-900">{verb} </span>
@@ -108,7 +116,8 @@ export default function WhySection() {
         </div>
         <p className="mx-auto mt-6 flex max-w-2xl items-center justify-center gap-2 text-center text-xs font-medium text-slate-500">
           <CheckCircle2 className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-          Outcomes only. Assessment activities are mapped separately in the Assessment section.
+          Outcomes only. The same LO1 to LO6 labels carry through to Bloom's Taxonomy depth and
+          assessment mapping later on this page.
         </p>
 
         <div className="mx-auto mt-8 max-w-3xl rounded-xl2 border border-teal-100 bg-teal-50/60 p-6 sm:p-8">

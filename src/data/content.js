@@ -14,6 +14,20 @@ export const navItems = [
   { id: "implementation", label: "Implementation" },
 ];
 
+// The narrative this whole site follows, in order. Surfaced on the homepage
+// as a short "how to read this project" line so a first time visitor knows
+// it is a learning experience design case study, not a product landing page.
+export const storySteps = [
+  "Research",
+  "Gap",
+  "Personas",
+  "Outcomes",
+  "Content",
+  "Delivery",
+  "Assessment",
+  "Impact",
+];
+
 export const sectors = [
   "Cyber Security",
   "Retail",
@@ -210,6 +224,14 @@ export const learningOutcomes = [
 
 export const learningOutcomesAlignmentStatement =
   "The learning outcomes are aligned with the identified learning gap. The gap shows that learners may understand employability skills generally but lack confidence, evidence, sector relevant examples, interview readiness and practical workplace preparation. The outcomes therefore move learners from recognising their strengths, to explaining them clearly, demonstrating workplace behaviours, constructing interview responses, producing employability evidence and evaluating feedback to improve readiness.";
+
+// A quick, scannable read of how varied the cohort is, shown before the
+// persona tabs so the diversity is explicit without clicking through all six.
+export const learnerDiversitySnapshot = [
+  { value: "19 to 38", label: "Age range across the six personas" },
+  { value: "6", label: "Distinct sectors, from cyber security and care to construction trades" },
+  { value: "3 of 6", label: "Personas carry a declared or undeclared learning, attention or anxiety related need" },
+];
 
 export const personas = [
   {
@@ -636,6 +658,41 @@ export const feedbackLayers = {
   ai: ["Immediate feedback", "Clarity", "Structure", "Confidence", "Relevance", "Professional tone", "Sector alignment", "Improvement suggestions"],
   tutor: ["Human judgement", "Learner engagement review", "Progress trend review", "Readiness score review", "Evidence quality review", "Intervention planning"],
 };
+
+// Forward looking targets for the Phase 4 pilot (see implementation.timeline),
+// not claimed results. This keeps Impact measurable without inventing figures.
+export const impactMetrics = [
+  {
+    icon: "TrendingUp",
+    metric: "Confidence uplift",
+    target: "Average learner confidence score rises by 25% or more between the Module 1 diagnostic and the Module 8 readiness review.",
+    measure: "AI confidence scoring at each module checkpoint.",
+  },
+  {
+    icon: "Award",
+    metric: "Passport completion",
+    target: "80% or more of active learners complete a full employability passport by programme end.",
+    measure: "Passport evidence tracking within the platform.",
+  },
+  {
+    icon: "Mic",
+    metric: "Interview readiness",
+    target: "Measurable improvement in mock interview clarity, structure and confidence across repeated attempts.",
+    measure: "AI mock interview scoring compared before and after practice.",
+  },
+  {
+    icon: "Gauge",
+    metric: "Tutor responsiveness",
+    target: "Tutors identify and act on cohort gaps within one workshop cycle rather than at programme end.",
+    measure: "Tutor analytics dashboard and workshop planning logs.",
+  },
+  {
+    icon: "BarChart3",
+    metric: "Provider reporting",
+    target: "Providers can report learner engagement, readiness and evidence to funders and stakeholders.",
+    measure: "Exportable readiness and evidence summaries from the passport and analytics.",
+  },
+];
 
 export const tutorIntelligence = {
   body: "Zohapo helps tutors move from reactive support to evidence informed coaching. Instead of guessing what learners need, tutors can see patterns in activity, confidence, responses and readiness, so workshops can be targeted, practical and responsive. This includes flagging learners who may benefit from additional support, reassurance or early intervention, including support needs that have not been formally declared.",

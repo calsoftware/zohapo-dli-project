@@ -28,13 +28,13 @@ export default function Header() {
           <span className="font-display text-lg font-bold tracking-tight">Zohapo</span>
         </button>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavigate(item.id)}
               aria-current={activeId === item.id ? "true" : undefined}
-              className={`focus-ring rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+              className={`focus-ring rounded-full px-3 py-2 text-sm font-medium transition-colors ${
                 activeId === item.id
                   ? "bg-white/10 text-white"
                   : "text-slate-300 hover:text-white"
@@ -47,13 +47,13 @@ export default function Header() {
 
         <button
           onClick={() => handleNavigate("research")}
-          className="focus-ring hidden rounded-full bg-gradient-to-r from-brand-blue to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5 lg:inline-block"
+          className="focus-ring hidden rounded-full bg-gradient-to-r from-brand-blue to-brand-violet px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5 xl:inline-block"
         >
           View the Evidence
         </button>
 
         <button
-          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-lg text-white lg:hidden"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-lg text-white xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -71,7 +71,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-white/10 lg:hidden"
+            className="overflow-hidden border-t border-white/10 xl:hidden"
             aria-label="Mobile"
           >
             <div className="flex flex-col gap-1 px-5 py-4">

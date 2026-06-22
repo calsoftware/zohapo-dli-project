@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Target, ShieldAlert, Smartphone, Heart, Lightbulb, CheckCircle2 } from "lucide-react";
+import { Target, ShieldAlert, Smartphone, Heart, Lightbulb, CheckCircle2, BadgeCheck } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
 import Card from "./ui/Card";
@@ -12,7 +12,19 @@ import {
   inclusiveDesignSummary,
   inclusiveDesignFeatures,
   designConsiderations,
+  learnerDiversitySnapshot,
 } from "../data/content";
+
+// Per persona accent treatment for the active tab state. Tailwind needs the
+// literal class names (no dynamic string building) to pick them up at build time.
+const personaAccents = {
+  blue: { border: "border-blue-400", bg: "bg-blue-50", ring: "ring-blue-200", badge: "bg-blue-600", text: "text-blue-700", glow: "shadow-[0_0_0_1px_rgba(96,165,250,0.5),0_18px_32px_-14px_rgba(59,130,246,0.55)]" },
+  amber: { border: "border-amber-400", bg: "bg-amber-50", ring: "ring-amber-200", badge: "bg-amber-600", text: "text-amber-700", glow: "shadow-[0_0_0_1px_rgba(251,191,36,0.5),0_18px_32px_-14px_rgba(217,119,6,0.55)]" },
+  violet: { border: "border-violet-400", bg: "bg-violet-50", ring: "ring-violet-200", badge: "bg-violet-600", text: "text-violet-700", glow: "shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_18px_32px_-14px_rgba(124,58,237,0.55)]" },
+  teal: { border: "border-teal-400", bg: "bg-teal-50", ring: "ring-teal-200", badge: "bg-teal-600", text: "text-teal-700", glow: "shadow-[0_0_0_1px_rgba(45,212,191,0.5),0_18px_32px_-14px_rgba(13,148,136,0.55)]" },
+  rose: { border: "border-rose-400", bg: "bg-rose-50", ring: "ring-rose-200", badge: "bg-rose-600", text: "text-rose-700", glow: "shadow-[0_0_0_1px_rgba(251,113,133,0.5),0_18px_32px_-14px_rgba(225,29,72,0.55)]" },
+  emerald: { border: "border-emerald-400", bg: "bg-emerald-50", ring: "ring-emerald-200", badge: "bg-emerald-600", text: "text-emerald-700", glow: "shadow-[0_0_0_1px_rgba(110,231,183,0.5),0_18px_32px_-14px_rgba(5,150,105,0.55)]" },
+};
 
 export default function PersonasSection() {
   const [activeId, setActiveId] = useState(personas[0].id);
@@ -28,28 +40,52 @@ export default function PersonasSection() {
           align="center"
         />
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {personas.map((persona) => (
-            <button
-              key={persona.id}
-              onClick={() => setActiveId(persona.id)}
-              aria-pressed={activeId === persona.id}
-              className={`focus-ring group rounded-xl2 border p-4 text-left transition-all ${
-                activeId === persona.id
-                  ? "border-brand-violet bg-white shadow-glow"
-                  : "border-slate-200 bg-white/60 hover:bg-white"
-              }`}
-            >
-              <PersonaPortrait
-                id={persona.id}
-                accent={persona.color}
-                name={persona.name}
-                className="h-11 w-11"
-              />
-              <p className="mt-3 font-display text-sm font-bold text-ink-900">{persona.name}</p>
-              <p className="text-xs text-slate-500">{persona.sector}</p>
-            </button>
+        <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
+          {learnerDiversitySnapshot.map((stat) => (
+            <div key={stat.label} className="rounded-xl2 border border-slate-200 bg-white p-4 text-center shadow-card">
+              <p className="font-display text-2xl font-extrabold gradient-text">{stat.value}</p>
+              <p className="mt-1 text-xs leading-relaxed text-slate-600">{stat.label}</p>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+          {personas.map((persona) => {
+            const isActive = activeId === persona.id;
+            const accent = personaAccents[persona.color] ?? personaAccents.blue;
+            return (
+              <button
+                key={persona.id}
+                onClick={() => setActiveId(persona.id)}
+                aria-pressed={isActive}
+                className={`focus-ring group relative rounded-xl2 border p-4 text-left transition-all duration-200 ${
+                  isActive
+                    ? `z-10 -translate-y-1 border-2 ${accent.border} ${accent.bg} ${accent.glow}`
+                    : "border-slate-200 bg-white/70 shadow-sm hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:shadow-card"
+                }`}
+              >
+                {isActive && (
+                  <span
+                    className={`absolute -top-2.5 right-3 flex items-center gap-1 rounded-full ${accent.badge} px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm`}
+                  >
+                    <BadgeCheck className="h-3 w-3" aria-hidden="true" />
+                    Selected
+                  </span>
+                )}
+                <PersonaPortrait
+                  id={persona.id}
+                  accent={persona.color}
+                  name={persona.name}
+                  active={isActive}
+                  className="h-11 w-11"
+                />
+                <p className={`mt-3 font-display text-sm font-bold ${isActive ? accent.text : "text-ink-900"}`}>
+                  {persona.name}
+                </p>
+                <p className="text-xs text-slate-500">{persona.sector}</p>
+              </button>
+            );
+          })}
         </div>
 
         <AnimatePresence mode="wait">

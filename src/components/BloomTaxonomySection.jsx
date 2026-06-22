@@ -1,4 +1,4 @@
-import { BrainCircuit } from "lucide-react";
+import { BrainCircuit, ArrowRight } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
 import { bloomTaxonomy, bloomAlignmentStatement } from "../data/content";
@@ -30,13 +30,20 @@ export default function BloomTaxonomySection() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {Object.entries(levelColor).map(([level, color]) => (
-            <Badge key={level} color={color}>
-              {level}
-            </Badge>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+          {Object.entries(levelColor).map(([level, color], i, arr) => (
+            <span key={level} className="flex items-center gap-2">
+              <Badge color={color}>{level}</Badge>
+              {i < arr.length - 1 && (
+                <ArrowRight className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+              )}
+            </span>
           ))}
         </div>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-xs font-medium text-slate-500">
+          A deliberate progression of increasing cognitive demand, from recall in early modules to
+          evaluation and creation of evidence by Module 8.
+        </p>
 
         <div className="mt-6 overflow-x-auto rounded-xl2 border border-slate-200 shadow-card">
           <table className="w-full min-w-[640px] text-left text-sm">

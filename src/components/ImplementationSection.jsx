@@ -17,7 +17,7 @@ export default function ImplementationSection() {
         {/* Timeline */}
         <div className="mt-12">
           <h3 className="text-center font-display text-xl font-bold text-ink-900">Phased Timeline</h3>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {implementation.timeline.map((phase, i) => (
               <motion.div
                 key={phase.phase}
@@ -41,7 +41,7 @@ export default function ImplementationSection() {
         </div>
 
         {/* Budget + Team + Tech */}
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Panel icon={Wallet} title="Budget Considerations" accent="text-brand-blue" bg="bg-blue-50">
             <ul className="mt-3 space-y-3">
               {implementation.budget.map((b) => (

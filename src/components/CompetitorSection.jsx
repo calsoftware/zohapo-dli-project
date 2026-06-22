@@ -67,10 +67,10 @@ export default function CompetitorSection() {
           <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-center text-[11px] font-medium text-slate-500">
             Self service tool
           </span>
-          <span className="absolute -left-2 top-1/2 -translate-y-1/2 -translate-x-full text-right text-[11px] font-medium text-slate-500">
+          <span className="absolute -left-2 top-1/2 hidden -translate-x-full -translate-y-1/2 text-right text-[11px] font-medium text-slate-500 lg:block">
             Generic content
           </span>
-          <span className="absolute -right-2 top-1/2 w-24 -translate-y-1/2 translate-x-full text-left text-[11px] font-medium text-slate-500">
+          <span className="absolute -right-2 top-1/2 hidden w-24 -translate-y-1/2 translate-x-full text-left text-[11px] font-medium text-slate-500 lg:block">
             Personalised sector support
           </span>
 

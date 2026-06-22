@@ -18,7 +18,7 @@ export default function AssessmentSection() {
           align="center"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           <ListPanel icon={ClipboardList} title="Formative Assessment" items={formativeAssessment} accent="text-brand-blue" bg="bg-blue-50" />
           <ListPanel icon={Award} title="Summative Assessment" items={summativeAssessment} accent="text-brand-violet" bg="bg-violet-50" />
         </div>
@@ -26,8 +26,8 @@ export default function AssessmentSection() {
         <h3 className="mt-16 text-center font-display text-2xl font-bold text-ink-900">
           Assessment Strategy
         </h3>
-        <div className="mt-8 overflow-hidden rounded-xl2 border border-slate-200 shadow-card">
-          <table className="w-full text-left text-sm">
+        <div className="mt-8 overflow-x-auto rounded-xl2 border border-slate-200 shadow-card">
+          <table className="w-full min-w-[560px] text-left text-sm">
             <thead className="bg-ink-900 text-white">
               <tr>
                 <th className="px-5 py-3 font-display font-bold sm:px-6">Learning Outcome</th>
@@ -48,7 +48,7 @@ export default function AssessmentSection() {
         <h3 className="mt-16 text-center font-display text-2xl font-bold text-ink-900">
           Feedback Strategy: Two Layers
         </h3>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           <ListPanel icon={Bot} title="AI Feedback" items={feedbackLayers.ai} accent="text-brand-teal" bg="bg-teal-50" />
           <ListPanel icon={UserCheck} title="Tutor Feedback" items={feedbackLayers.tutor} accent="text-amber-600" bg="bg-amber-50" />
         </div>

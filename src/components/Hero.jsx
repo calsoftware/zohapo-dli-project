@@ -10,8 +10,13 @@ import {
   Compass,
   BarChart3,
   Award,
+  Map,
+  ArrowRight,
+  Sparkles,
+  Presentation,
 } from "lucide-react";
 import ProgressRing from "./ui/ProgressRing";
+import { storySteps } from "../data/content";
 
 const contextCapabilities = [
   { icon: Bot, label: "AI coaching" },
@@ -20,6 +25,14 @@ const contextCapabilities = [
   { icon: Compass, label: "Transferable skills discovery" },
   { icon: BarChart3, label: "Tutor analytics" },
   { icon: Award, label: "Digital employability passport" },
+];
+
+const learningLoop = [
+  { icon: Bot, label: "AI learning" },
+  { icon: Sparkles, label: "AI feedback" },
+  { icon: BarChart3, label: "Tutor analytics" },
+  { icon: Presentation, label: "Workshop intervention" },
+  { icon: Award, label: "Employability passport" },
 ];
 
 export default function Hero() {
@@ -34,7 +47,29 @@ export default function Hero() {
     >
       <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.18)_1px,transparent_0)] [background-size:28px_28px]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-10">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-wrap items-center gap-x-2.5 gap-y-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs text-slate-300 sm:text-sm"
+        >
+          <span className="flex items-center gap-1.5 font-semibold text-brand-teal">
+            <Map className="h-3.5 w-3.5" aria-hidden="true" />
+            How to read this project
+          </span>
+          {storySteps.map((step, i) => (
+            <span key={step} className="flex items-center gap-2">
+              {step}
+              {i < storySteps.length - 1 && (
+                <ArrowRight className="h-3 w-3 text-slate-500" aria-hidden="true" />
+              )}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
+      <div className="relative mx-auto mt-8 grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-10">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +79,7 @@ export default function Hero() {
             AI Powered Employability Readiness
           </span>
 
-          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Zohapo
           </h1>
           <p className="mt-3 font-display text-2xl font-semibold gradient-text sm:text-3xl">
@@ -82,7 +117,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-          className="relative"
+          className="relative mx-auto w-full max-w-md lg:max-w-none lg:mx-0"
         >
           <div className="glass rounded-xl2 p-5 shadow-2xl sm:p-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -184,6 +219,25 @@ export default function Hero() {
                 >
                   <Icon className="h-5 w-5 text-brand-teal" aria-hidden="true" />
                   <p className="text-sm font-semibold text-white">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 p-6 sm:p-8 lg:p-10 lg:pt-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-teal">
+              The Learning Loop
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              {learningLoop.map(({ icon: Icon, label }, i) => (
+                <div key={label} className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-center">
+                    <Icon className="h-4 w-4 text-brand-teal" aria-hidden="true" />
+                    <span className="text-[11px] font-medium text-slate-200 sm:text-xs">{label}</span>
+                  </div>
+                  {i < learningLoop.length - 1 && (
+                    <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-slate-500" aria-hidden="true" />
+                  )}
                 </div>
               ))}
             </div>

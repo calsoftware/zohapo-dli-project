@@ -13,7 +13,7 @@ export default function TutorIntelligenceSection() {
         align="center"
       />
 
-      <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {tutorIntelligence.items.map((item, i) => (
           <motion.div
             key={item}

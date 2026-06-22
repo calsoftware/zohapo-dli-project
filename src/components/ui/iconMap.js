@@ -16,6 +16,7 @@ import {
   Bot,
   TrendingUp,
   UserCheck,
+  Award,
   Sparkle,
 } from "lucide-react";
 
@@ -35,6 +36,7 @@ export const iconMap = {
   Bot,
   TrendingUp,
   UserCheck,
+  Award,
 };
 
 export const FallbackIcon = Sparkle;

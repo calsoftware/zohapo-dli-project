@@ -66,8 +66,8 @@ export default function WhatSection() {
           <h3 className="text-center font-display text-xl font-bold text-ink-900">
             How content adapts across a mixed sector cohort
           </h3>
-          <div className="mt-6 overflow-hidden rounded-xl2 border border-slate-200 shadow-card">
-            <table className="w-full text-left text-sm">
+          <div className="mt-6 overflow-x-auto rounded-xl2 border border-slate-200 shadow-card">
+            <table className="w-full min-w-[560px] text-left text-sm">
               <thead className="bg-ink-900 text-white">
                 <tr>
                   <th className="px-5 py-3 font-display font-bold sm:px-6">Learner Sector</th>
