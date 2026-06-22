@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(chromium-cli --help)",
+      "Bash(mkdir -p /tmp/shots)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --no-sandbox --window-size=1440,2200 --screenshot=/tmp/shots/home.png \"http://localhost:5173/dliproject/\")",
+      "Read(//tmp/**)",
+      "Read(//c/Users/info/AppData/Local/Temp/shots/**)"
+    ]
+  }
+}
