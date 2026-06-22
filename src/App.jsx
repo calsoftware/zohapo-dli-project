@@ -7,6 +7,7 @@ import PersonasSection from "./components/PersonasSection";
 import WhatSection from "./components/WhatSection";
 import HowSection from "./components/HowSection";
 import AssessmentSection from "./components/AssessmentSection";
+import BloomTaxonomySection from "./components/BloomTaxonomySection";
 import ImpactSection from "./components/ImpactSection";
 import ImplementationSection from "./components/ImplementationSection";
 import FinalSection from "./components/FinalSection";
@@ -32,6 +33,7 @@ export default function App() {
         <WhatSection />
         <HowSection />
         <AssessmentSection />
+        <BloomTaxonomySection />
         <ImpactSection />
         <ImplementationSection />
         <FinalSection />

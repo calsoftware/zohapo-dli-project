@@ -200,13 +200,16 @@ export const beforeAfter = [
 ];
 
 export const learningOutcomes = [
-  "Identify personal strengths, transferable skills and areas for development.",
-  "Explain skills, experience and career goals using examples relevant to their chosen sector.",
-  "Demonstrate appropriate workplace behaviours in realistic scenarios.",
-  "Prepare stronger interview responses using structured examples.",
-  "Produce employability evidence through reflections, skills statements, interview practice and a digital passport.",
-  "Use AI and tutor feedback to improve confidence, readiness and preparation for employment or placement.",
+  "Identify personal strengths, transferable skills and areas for employability development.",
+  "Explain skills, experience and career goals using clear examples relevant to a chosen sector.",
+  "Demonstrate appropriate workplace behaviours in realistic scenarios involving communication, teamwork, problem solving and professionalism.",
+  "Construct structured interview responses using examples from personal experience, training or sector interest.",
+  "Produce a portfolio of employability evidence that demonstrates skills, reflection, interview preparation and work readiness.",
+  "Evaluate and apply AI and tutor feedback to improve confidence, employability readiness and preparation for employment or placement.",
 ];
+
+export const learningOutcomesAlignmentStatement =
+  "The learning outcomes are aligned with the identified learning gap. The gap shows that learners may understand employability skills generally but lack confidence, evidence, sector relevant examples, interview readiness and practical workplace preparation. The outcomes therefore move learners from recognising their strengths, to explaining them clearly, demonstrating workplace behaviours, constructing interview responses, producing employability evidence and evaluating feedback to improve readiness.";
 
 export const personas = [
   {
@@ -235,26 +238,28 @@ export const personas = [
       "Structured answer prompts and feedback on clarity, confidence and professionalism",
       "Help turning course activities into employability evidence",
       "Avoid assuming technical knowledge alone means she is work ready",
+      "Aisha benefits from structured prompts, clear examples, predictable task steps and feedback that helps her explain technical concepts in plain English. This supports learners who may be confident with technical content but less confident with professional communication and interview explanation.",
     ],
   },
   {
-    id: "emily",
-    name: "Emily Carter",
+    id: "john",
+    name: "John Richardson",
     age: 21,
     sector: "Retail",
     color: "amber",
-    initials: "EC",
-    bio: "Unemployed learner preparing for entry level retail work after a short employability programme. She has informal customer facing experience, such as greeting customers, arranging stock and simple transactions, but doesn't yet recognise it as strong employability evidence.",
+    initials: "JR",
+    bio: "Unemployed learner preparing for entry level retail work after a short employability programme. He has informal customer facing experience, such as greeting customers, arranging stock and simple transactions, but doesn't yet recognise it as strong employability evidence.",
     goals: [
       "Secure a first stable retail role in a supermarket, fashion store or customer service environment.",
-      "Show she is reliable, polite, helpful and able to communicate with customers and colleagues.",
+      "Show he is reliable, polite, helpful and able to communicate with customers and colleagues.",
       "Feel confident in interviews and understand what retail employers expect.",
     ],
     barriers: [
       "Lacks confidence in formal interview situations.",
-      "Gives short answers even when she has relevant experience.",
+      "Gives short answers even when he has relevant experience.",
       "Struggles to connect informal customer service experience to employer expectations.",
       "May disengage if learning feels too academic, long or text heavy.",
+      "Has a mild specific learning difficulty linked to dyslexia. He communicates well verbally but sometimes struggles with spelling, longer written tasks and structuring application answers. This can make him avoid written employability tasks, even when he has useful customer service experience.",
     ],
     technology: "Mainly uses a smartphone with regular internet access; may not always have a laptop, so the platform must work well on mobile.",
     preferences: "Practical activities based on real retail situations, customer service scenarios, short tasks and voice based responses, with supportive instant feedback that avoids judgement.",
@@ -263,6 +268,7 @@ export const personas = [
       "Realistic retail scenarios with voice input and short activities",
       "Help turning informal customer service experience into employability evidence",
       "Confidence building, professional communication and interview readiness",
+      "Zohapo should support John through voice input, sentence starters, simple templates, spelling support, short writing tasks and supportive feedback that focuses first on meaning, confidence and employability relevance before written accuracy.",
     ],
   },
   {
@@ -340,6 +346,7 @@ export const personas = [
       "Worries technology and customer support systems have changed too much.",
       "Struggles to explain her career break positively.",
       "Underestimates transferable skills from work, parenting and life responsibilities.",
+      "Experiences anxiety about returning to work after a long career break. She does not have a formal learning difficulty, but she needs emotional reassurance, confidence building and gradual exposure to modern workplace tools. She worries that AI, automation, remote support systems and digital customer service platforms may have moved on without her.",
     ],
     technology: "Comfortable with everyday digital communication but less confident with newer customer service systems; benefits from plain language explanations of current tools.",
     preferences: "Supportive, practical, confidence building learning that connects previous experience to modern expectations, including voice practice, mock interviews and scenario tasks.",
@@ -348,6 +355,7 @@ export const personas = [
       "Mock interview questions about employment gaps and adaptability",
       "Scenarios covering live chat, helpdesk tickets and AI assisted support",
       "Tutor dashboards highlighting confidence growth and return to work readiness",
+      "Zohapo should support Rachel through psychologically safe feedback, repeat practice, low pressure mock interviews, confidence tracking, return to work coaching and simple explanations of modern customer service tools. The design should avoid making career returners feel outdated, judged or left behind.",
     ],
   },
   {
@@ -368,6 +376,7 @@ export const personas = [
       "Struggles to describe skills clearly in applications or interviews.",
       "Gives short answers even with useful experience.",
       "Needs support understanding punctuality, health and safety, and teamwork expectations.",
+      "Has ADHD traits and may have an undiagnosed literacy difficulty. He engages better with short, practical and visual tasks than long written activities. He may lose focus if the learning feels too text heavy, too abstract or disconnected from hands on work.",
     ],
     technology: "Mainly uses a smartphone with limited regular laptop access; benefits from a mobile friendly platform with simple navigation and visual prompts.",
     preferences: "Practical, visual, scenario based learning covering site safety, teamwork, using tools responsibly and communicating with supervisors, with clear feedback that avoids judgement.",
@@ -376,6 +385,7 @@ export const personas = [
       "Mobile first, simple and accessible design",
       "Help turning informal hands on experience into employability evidence",
       "Confidence building around safety awareness and reliability",
+      "Zohapo should support Arjun through short activities, visual prompts, voice responses, practical scenarios, clear step by step instructions, progress nudges and immediate feedback. The platform should allow him to demonstrate practical judgement without relying only on extended written responses.",
     ],
   },
 ];
@@ -393,6 +403,57 @@ export const personaDesignDecisions = [
   "Tutor visibility",
   "Career returner support",
   "Practical trades friendly scenarios",
+];
+
+export const inclusiveDesignSummary = {
+  heading: "Inclusive Design Implications",
+  body: [
+    "The learner personas show that Zohapo must be designed for real mixed employability cohorts, not idealised learners. Some learners may have declared or undeclared SpLD, dyslexia, ADHD traits, anxiety, low confidence, literacy challenges or career returner concerns. These needs directly influence the learning design.",
+    "Zohapo therefore includes mobile access, voice and text options, short scaffolded activities, visual prompts, sentence starters, scenario based practice, confidence tracking, supportive AI coaching and tutor visibility. These features are not only convenience features. They are inclusive design decisions that help learners demonstrate employability readiness in ways that are accessible, practical and confidence building.",
+  ],
+};
+
+export const inclusiveDesignFeatures = [
+  {
+    icon: "Mic",
+    title: "Voice and text input",
+    description: "Supports learners who find extended writing difficult.",
+  },
+  {
+    icon: "ListChecks",
+    title: "Short scaffolded activities",
+    description: "Supports attention, confidence and gradual skill development.",
+  },
+  {
+    icon: "Image",
+    title: "Visual and practical prompts",
+    description: "Supports learners who respond better to concrete examples and real workplace scenarios.",
+  },
+  {
+    icon: "Bot",
+    title: "Supportive AI coaching",
+    description: "Allows repeated practice without embarrassment or judgement.",
+  },
+  {
+    icon: "TrendingUp",
+    title: "Confidence tracking",
+    description: "Helps learners and tutors see growth over time.",
+  },
+  {
+    icon: "UserCheck",
+    title: "Tutor visibility",
+    description: "Helps tutors identify learners who may need additional support, reassurance or intervention.",
+  },
+];
+
+export const designConsiderations = [
+  "Some learners may have SpLD, dyslexia, ADHD traits, anxiety or low confidence.",
+  "Some support needs may be hidden or undeclared.",
+  "Learning should not rely only on long written tasks.",
+  "The design should include voice input, templates, examples, visual prompts and short tasks.",
+  "The tutor dashboard should help identify learners who may need extra support.",
+  "The platform should build confidence without making learners feel judged.",
+  "Persona images should support inclusive representation and make the learning design feel human, diverse and realistic.",
 ];
 
 export const modules = [
@@ -524,12 +585,48 @@ export const sectorPersonalisation = [
 ];
 
 export const assessmentStrategy = [
-  { outcome: "1. Identify strengths and development areas", assessment: "AI diagnostic conversation, self assessment and reflection journal." },
-  { outcome: "2. Explain skills and goals using sector relevant examples", assessment: "Skills statement, CV improvement and application practice." },
-  { outcome: "3. Demonstrate workplace behaviours", assessment: "Scenario based workplace simulations." },
-  { outcome: "4. Prepare stronger interview responses", assessment: "AI mock interview, STAR practice and voice rehearsal." },
-  { outcome: "5. Produce employability evidence", assessment: "Digital employability passport and evidence portfolio." },
-  { outcome: "6. Use feedback to improve readiness", assessment: "Confidence tracking, tutor dashboard and readiness review." },
+  { outcome: "LO1: Identify strengths and development areas.", assessment: "AI diagnostic conversation, self assessment and reflection journal." },
+  { outcome: "LO2: Explain skills and goals using sector relevant examples.", assessment: "Skills statement activity, CV improvement task and application response practice." },
+  { outcome: "LO3: Demonstrate workplace behaviours.", assessment: "Scenario based workplace simulations with AI and tutor feedback." },
+  { outcome: "LO4: Construct structured interview responses.", assessment: "AI mock interview, STAR answer practice and voice based interview rehearsal." },
+  { outcome: "LO5: Produce employability evidence.", assessment: "Digital employability passport and evidence portfolio." },
+  { outcome: "LO6: Evaluate and apply feedback to improve readiness.", assessment: "Confidence tracking, tutor dashboard review, readiness review and improvement plan." },
+];
+
+export const bloomAlignmentStatement =
+  "The learning design moves learners from recognising and explaining their employability strengths towards applying them in workplace scenarios, creating evidence and evaluating their readiness through AI and tutor feedback. This progression supports the alignment between the Why, Who, What, How and Assessment strategy.";
+
+export const bloomTaxonomy = [
+  {
+    outcome: "LO1: Identify personal strengths, transferable skills and areas for employability development.",
+    levels: ["Remember", "Understand", "Analyse"],
+    rationale: "Learners recognise their strengths, understand their relevance and analyse areas requiring further employability development.",
+  },
+  {
+    outcome: "LO2: Explain skills, experience and career goals using clear examples relevant to a chosen sector.",
+    levels: ["Understand", "Apply"],
+    rationale: "Learners explain their experience and apply it to sector relevant employment contexts.",
+  },
+  {
+    outcome: "LO3: Demonstrate appropriate workplace behaviours in realistic scenarios involving communication, teamwork, problem solving and professionalism.",
+    levels: ["Apply"],
+    rationale: "Learners show how they would act in practical workplace situations.",
+  },
+  {
+    outcome: "LO4: Construct structured interview responses using examples from personal experience, training or sector interest.",
+    levels: ["Apply", "Create"],
+    rationale: "Learners apply a structured method such as STAR and create improved interview responses.",
+  },
+  {
+    outcome: "LO5: Produce a portfolio of employability evidence that demonstrates skills, reflection, interview preparation and work readiness.",
+    levels: ["Create"],
+    rationale: "Learners produce a portfolio that brings together evidence of skills, reflections, practice and readiness.",
+  },
+  {
+    outcome: "LO6: Evaluate and apply AI and tutor feedback to improve confidence, employability readiness and preparation for employment or placement.",
+    levels: ["Evaluate", "Apply"],
+    rationale: "Learners judge feedback, decide what needs improvement and apply that feedback to strengthen readiness.",
+  },
 ];
 
 export const formativeAssessment = ["AI diagnostic questions", "Workplace scenario responses", "Reflection activities", "Communication practice", "CV and application improvement tasks", "Mock interview attempts", "Confidence check ins", "Short quizzes"];
@@ -541,7 +638,7 @@ export const feedbackLayers = {
 };
 
 export const tutorIntelligence = {
-  body: "Zohapo helps tutors move from reactive support to evidence informed coaching. Instead of guessing what learners need, tutors can see patterns in activity, confidence, responses and readiness, so workshops can be targeted, practical and responsive.",
+  body: "Zohapo helps tutors move from reactive support to evidence informed coaching. Instead of guessing what learners need, tutors can see patterns in activity, confidence, responses and readiness, so workshops can be targeted, practical and responsive. This includes flagging learners who may benefit from additional support, reassurance or early intervention, including support needs that have not been formally declared.",
   items: ["Cohort overview", "Learner engagement", "Confidence trend", "Readiness score", "Completed activities", "Learners needing support", "Common learning gaps", "Workshop planning recommendations", "Interview readiness data", "Employability passport evidence"],
 };
 

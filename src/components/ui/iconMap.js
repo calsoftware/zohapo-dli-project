@@ -10,6 +10,12 @@ import {
   Presentation,
   UsersRound,
   Drama,
+  Mic,
+  ListChecks,
+  Image,
+  Bot,
+  TrendingUp,
+  UserCheck,
   Sparkle,
 } from "lucide-react";
 
@@ -23,6 +29,12 @@ export const iconMap = {
   Presentation,
   UsersRound,
   Drama,
+  Mic,
+  ListChecks,
+  Image,
+  Bot,
+  TrendingUp,
+  UserCheck,
 };
 
 export const FallbackIcon = Sparkle;

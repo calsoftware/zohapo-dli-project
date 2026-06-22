@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, Bot, TrendingUp, ShieldCheck, ClipboardCheck } from "lucide-react";
+import {
+  Users,
+  Bot,
+  TrendingUp,
+  ShieldCheck,
+  ClipboardCheck,
+  Drama,
+  Mic,
+  Compass,
+  BarChart3,
+  Award,
+} from "lucide-react";
 import ProgressRing from "./ui/ProgressRing";
+
+const contextCapabilities = [
+  { icon: Bot, label: "AI coaching" },
+  { icon: Drama, label: "Scenario practice" },
+  { icon: Mic, label: "Interview preparation" },
+  { icon: Compass, label: "Transferable skills discovery" },
+  { icon: BarChart3, label: "Tutor analytics" },
+  { icon: Award, label: "Digital employability passport" },
+];
 
 export default function Hero() {
   const scrollTo = (id) => {
@@ -43,18 +63,11 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-4">
             <button
-              onClick={() => scrollTo("research")}
+              onClick={() => scrollTo("who")}
               className="focus-ring inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-violet px-6 py-3.5 text-sm font-semibold shadow-glow transition-transform hover:-translate-y-0.5"
             >
-              Explore the LX Design Plan
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </button>
-            <button
-              onClick={() => scrollTo("who")}
-              className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              <PlayCircle className="h-4 w-4" aria-hidden="true" />
-              View the Learner Journey
+              <Users className="h-4 w-4" aria-hidden="true" />
+              Learner Personas
             </button>
           </div>
 
@@ -130,10 +143,50 @@ export default function Hero() {
               </div>
             </div>
           </div>
+        </motion.div>
+      </div>
 
-          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white px-5 py-3 shadow-2xl sm:block">
-            <p className="text-[11px] font-medium text-slate-500">Sector personalised for</p>
-            <p className="font-display text-sm font-bold text-ink-900">Cyber Security · Retail · Care</p>
+      <div className="relative mx-auto mt-14 max-w-7xl px-5 sm:px-8 lg:mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="glass overflow-hidden rounded-xl2 shadow-2xl"
+        >
+          <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:p-10">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-teal">
+                Context
+              </span>
+              <p className="mt-5 leading-relaxed text-slate-300">
+                Zohapo is designed for training providers, employability organisations, colleges,
+                adult learning providers and job placement programmes that support learners into
+                employment, placement or career transition. It responds to a real challenge in
+                employability training: tutors and stakeholders often lack clear visibility of how
+                ready learners are for work, especially when learners have different career goals,
+                confidence levels, digital skills and sector interests.
+              </p>
+              <p className="mt-4 leading-relaxed text-slate-300">
+                Zohapo supports this by combining AI coaching, scenario practice, interview
+                preparation, transferable skills discovery, tutor analytics and a digital
+                employability passport. The aim is to help learners move from general
+                employability awareness to confident, evidenced and sector relevant work
+                readiness.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2">
+              {contextCapabilities.map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-4"
+                >
+                  <Icon className="h-5 w-5 text-brand-teal" aria-hidden="true" />
+                  <p className="text-sm font-semibold text-white">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

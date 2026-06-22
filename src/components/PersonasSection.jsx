@@ -3,16 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Target, ShieldAlert, Smartphone, Heart, Lightbulb, CheckCircle2 } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
-import { personas, personaDesignDecisions } from "../data/content";
-
-const ringColor = {
-  blue: "ring-blue-200 bg-blue-600",
-  amber: "ring-amber-200 bg-amber-500",
-  violet: "ring-violet-200 bg-violet-600",
-  teal: "ring-teal-200 bg-teal-600",
-  rose: "ring-rose-200 bg-rose-500",
-  emerald: "ring-emerald-200 bg-emerald-600",
-};
+import Card from "./ui/Card";
+import PersonaPortrait from "./ui/PersonaPortrait";
+import { iconMap, FallbackIcon } from "./ui/iconMap";
+import {
+  personas,
+  personaDesignDecisions,
+  inclusiveDesignSummary,
+  inclusiveDesignFeatures,
+  designConsiderations,
+} from "../data/content";
 
 export default function PersonasSection() {
   const [activeId, setActiveId] = useState(personas[0].id);
@@ -24,7 +24,7 @@ export default function PersonasSection() {
         <SectionHeading
           eyebrow="The Who of Learning"
           heading="Six learners. Six employment goals. One platform."
-          subheading="Each persona represents a realistic employability learner who has potential and motivation, but requires structured support to become work ready."
+          subheading="Each persona represents a realistic employability learner, reflecting the age, sector focus and background suggested by their profile, alongside the declared, hidden or emerging support needs found in real mixed cohorts."
           align="center"
         />
 
@@ -40,13 +40,12 @@ export default function PersonasSection() {
                   : "border-slate-200 bg-white/60 hover:bg-white"
               }`}
             >
-              <span
-                className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-white ring-4 ${
-                  ringColor[persona.color]
-                }`}
-              >
-                {persona.initials}
-              </span>
+              <PersonaPortrait
+                id={persona.id}
+                accent={persona.color}
+                name={persona.name}
+                className="h-11 w-11"
+              />
               <p className="mt-3 font-display text-sm font-bold text-ink-900">{persona.name}</p>
               <p className="text-xs text-slate-500">{persona.sector}</p>
             </button>
@@ -64,13 +63,12 @@ export default function PersonasSection() {
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex items-center gap-4">
-                <span
-                  className={`flex h-16 w-16 items-center justify-center rounded-full text-lg font-bold text-white ring-4 ${
-                    ringColor[active.color]
-                  }`}
-                >
-                  {active.initials}
-                </span>
+                <PersonaPortrait
+                  id={active.id}
+                  accent={active.color}
+                  name={active.name}
+                  className="h-16 w-16"
+                />
                 <div>
                   <h3 className="font-display text-2xl font-bold text-ink-900">{active.name}</h3>
                   <p className="text-sm text-slate-500">Age {active.age}</p>
@@ -135,6 +133,51 @@ export default function PersonasSection() {
                 {decision}
               </motion.span>
             ))}
+          </div>
+        </div>
+
+        {/* Inclusive design implications */}
+        <div className="mt-20">
+          <SectionHeading
+            eyebrow="Designing for Real Cohorts"
+            heading={inclusiveDesignSummary.heading}
+            align="center"
+          />
+          <div className="mx-auto mt-6 max-w-3xl space-y-4 text-center text-slate-600">
+            {inclusiveDesignSummary.body.map((p) => (
+              <p key={p} className="leading-relaxed">
+                {p}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {inclusiveDesignFeatures.map((feature, i) => {
+              const Icon = iconMap[feature.icon] ?? FallbackIcon;
+              return (
+                <Card key={feature.title} delay={i * 0.05}>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-brand-violet">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <h4 className="mt-4 font-display text-base font-bold text-ink-900">{feature.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{feature.description}</p>
+                </Card>
+              );
+            })}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl2 border border-slate-200 bg-white p-6 shadow-card sm:p-8">
+            <p className="flex items-center gap-2 font-display text-sm font-bold text-ink-900">
+              <ShieldAlert className="h-4 w-4 text-brand-violet" aria-hidden="true" /> Design Considerations
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {designConsiderations.map((point) => (
+                <li key={point} className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-teal" aria-hidden="true" />
+                  {point}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

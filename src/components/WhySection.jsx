@@ -9,6 +9,7 @@ import {
   learningGapStatement,
   beforeAfter,
   learningOutcomes,
+  learningOutcomesAlignmentStatement,
 } from "../data/content";
 
 export default function WhySection() {
@@ -90,19 +91,30 @@ export default function WhySection() {
           By the end of the Zohapo employability readiness journey, learners will be able to:
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {learningOutcomes.map((outcome, i) => (
-            <Card key={outcome} delay={i * 0.05} className="flex gap-3">
-              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 font-display text-sm font-bold text-brand-teal">
-                {i + 1}
-              </span>
-              <p className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">{outcome}</p>
-            </Card>
-          ))}
+          {learningOutcomes.map((outcome, i) => {
+            const [verb, ...rest] = outcome.split(" ");
+            return (
+              <Card key={outcome} delay={i * 0.05} className="flex gap-3">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 font-display text-sm font-bold text-brand-teal">
+                  {i + 1}
+                </span>
+                <p className="text-sm leading-relaxed text-slate-700">
+                  <span className="font-display font-bold text-ink-900">{verb} </span>
+                  {rest.join(" ")}
+                </p>
+              </Card>
+            );
+          })}
         </div>
         <p className="mx-auto mt-6 flex max-w-2xl items-center justify-center gap-2 text-center text-xs font-medium text-slate-500">
           <CheckCircle2 className="h-4 w-4 text-brand-teal" aria-hidden="true" />
           Outcomes only. Assessment activities are mapped separately in the Assessment section.
         </p>
+
+        <div className="mx-auto mt-8 max-w-3xl rounded-xl2 border border-teal-100 bg-teal-50/60 p-6 sm:p-8">
+          <h3 className="font-display text-lg font-bold text-ink-900">Aligned to the Learning Gap</h3>
+          <p className="mt-3 leading-relaxed text-slate-700">{learningOutcomesAlignmentStatement}</p>
+        </div>
       </div>
     </section>
   );

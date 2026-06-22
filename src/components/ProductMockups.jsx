@@ -89,7 +89,7 @@ function Frame({ title, badge, children }) {
 
 function LearnerDashboardMock() {
   return (
-    <Frame title="Welcome back, Emily" badge="Retail Pathway">
+    <Frame title="Welcome back, John" badge="Retail Pathway">
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="flex flex-col items-center justify-center rounded-xl bg-white/5 p-4">
           <ProgressRing percent={64} size={88} color="#60A5FA" label="Confidence score" />
