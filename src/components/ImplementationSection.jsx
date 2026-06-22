@@ -8,7 +8,7 @@ export default function ImplementationSection() {
     <section id="implementation" className="bg-slate-50 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Implementation — The What If Checklist"
+          eyebrow="Implementation: The What If Checklist"
           heading="Turning the design into a deliverable"
           subheading="Budget, timeline, team and technology considerations for moving Zohapo from concept to pilot."
           align="center"

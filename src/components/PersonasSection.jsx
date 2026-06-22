@@ -24,7 +24,7 @@ export default function PersonasSection() {
         <SectionHeading
           eyebrow="The Who of Learning"
           heading="Six learners. Six employment goals. One platform."
-          subheading="Each persona represents a realistic employability learner who has potential and motivation, but requires structured support to become work-ready."
+          subheading="Each persona represents a realistic employability learner who has potential and motivation, but requires structured support to become work ready."
           align="center"
         />
 

@@ -13,7 +13,7 @@ export default function CompetitorSection() {
       <SectionHeading
         eyebrow="Comparable Products"
         heading="Where Zohapo Stands Out"
-        subheading="A concise read of ten comparable platforms mapped against Zohapo — full detail lives in the supporting Executive Summary, not on this page."
+        subheading="A concise read of ten comparable platforms mapped against Zohapo. Full detail lives in the supporting Executive Summary, not on this page."
         align="center"
       />
 
@@ -62,10 +62,10 @@ export default function CompetitorSection() {
           <div className="absolute inset-y-0 left-1/2 w-px bg-slate-200" />
 
           <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-center text-[11px] font-medium text-slate-500">
-            Tutor-informed learning system
+            Tutor informed learning system
           </span>
           <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-center text-[11px] font-medium text-slate-500">
-            Self-service tool
+            Self service tool
           </span>
           <span className="absolute -left-2 top-1/2 -translate-y-1/2 -translate-x-full text-right text-[11px] font-medium text-slate-500">
             Generic content

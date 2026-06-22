@@ -101,7 +101,7 @@ export default function WhySection() {
         </div>
         <p className="mx-auto mt-6 flex max-w-2xl items-center justify-center gap-2 text-center text-xs font-medium text-slate-500">
           <CheckCircle2 className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-          Outcomes only — assessment activities are mapped separately in the Assessment section.
+          Outcomes only. Assessment activities are mapped separately in the Assessment section.
         </p>
       </div>
     </section>

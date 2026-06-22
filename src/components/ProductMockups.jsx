@@ -27,9 +27,9 @@ export default function ProductMockups() {
   return (
     <div className="mt-24">
       <SectionHeading
-        eyebrow="Product Mock-Ups"
+        eyebrow="Product Mock Ups"
         heading="What the platform feels like"
-        subheading="Static, representative mock-ups of the Zohapo learner, coaching and tutor experience — illustrating the design intent for this submission."
+        subheading="Static, representative mock ups of the Zohapo learner, coaching and tutor experience, illustrating the design intent for this submission."
         align="center"
       />
 
@@ -130,7 +130,7 @@ function AiCoachMock() {
           got anxious about appointments.
         </ChatBubble>
         <ChatBubble from="ai">
-          That's a strong example of patience and reassurance — both valued in care work. Try
+          That's a strong example of patience and reassurance, both valued in care work. Try
           adding how you'd apply that calmness with a service user you don't know well.
         </ChatBubble>
       </div>
@@ -149,21 +149,21 @@ function MockInterviewMock() {
       <div className="rounded-xl bg-white/5 p-4">
         <p className="text-xs text-slate-400">Interview question</p>
         <p className="mt-1 font-display text-base font-semibold">
-          "Tell me how you would explain phishing to a non-technical colleague."
+          "Tell me how you would explain phishing to a non technical colleague."
         </p>
       </div>
       <div className="mt-4 rounded-xl bg-white/5 p-4">
         <p className="text-xs text-slate-400">Learner response (voice transcript)</p>
         <p className="mt-1 text-sm leading-relaxed text-slate-200">
           "I'd say a phishing email pretends to be from someone you trust to trick you into
-          clicking a link or sharing details — so always check the sender before clicking."
+          clicking a link or sharing details, so always check the sender before clicking."
         </p>
       </div>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-teal-500/10 to-blue-500/10 p-4">
           <p className="flex items-center gap-2 text-xs font-semibold text-brand-teal"><Sparkles className="h-4 w-4" /> AI feedback</p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            Clear, plain-English explanation. Add one concrete example next time to strengthen it.
+            Clear, plain English explanation. Add one concrete example next time to strengthen it.
           </p>
         </div>
         <div className="flex items-center justify-center rounded-xl bg-white/5 p-4">
@@ -187,7 +187,7 @@ function TutorDashboardMock() {
           <AlertTriangle className="h-4 w-4" /> Learners needing support
         </p>
         <p className="mt-2 text-sm leading-relaxed text-slate-200">
-          3 learners show low confidence in technical explanation tasks — recommend a small-group
+          3 learners show low confidence in technical explanation tasks, suggesting a small group
           breakout in the next workshop.
         </p>
       </div>

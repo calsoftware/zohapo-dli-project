@@ -14,7 +14,7 @@ export default function AssessmentSection() {
         <SectionHeading
           eyebrow="Assessment and Feedback"
           heading="Aligned to every learning outcome"
-          subheading="Assessment in Zohapo is continuous and evidence-based, combining AI-driven formative tasks with tutor-reviewed summative evidence."
+          subheading="Assessment in Zohapo is continuous and evidence based, combining AI driven formative tasks with tutor reviewed summative evidence."
           align="center"
         />
 

@@ -8,7 +8,7 @@ export default function TutorIntelligenceSection() {
     <div className="mt-4">
       <SectionHeading
         eyebrow="Tutor and Provider Intelligence"
-        heading="From reactive support to evidence-informed coaching"
+        heading="From reactive support to evidence informed coaching"
         subheading={tutorIntelligence.body}
         align="center"
       />

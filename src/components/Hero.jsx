@@ -21,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-teal">
-            AI-Powered Employability Readiness
+            AI Powered Employability Readiness
           </span>
 
           <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
@@ -32,12 +32,12 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-            An AI-powered employability readiness learning solution for mixed learner cohorts.
+            An AI powered employability readiness learning solution for mixed learner cohorts.
           </p>
 
           <p className="mt-4 max-w-xl leading-relaxed text-slate-400">
             Zohapo helps learners build confidence, practise workplace scenarios, prepare for
-            interviews, evidence their skills and become work-ready — while giving tutors
+            interviews, evidence their skills and become work ready, while giving tutors
             visibility of learner progress, gaps and readiness.
           </p>
 
@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-400">
-            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-brand-teal" /> Evidence-informed design</span>
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-brand-teal" /> Evidence informed design</span>
             <span className="flex items-center gap-2"><ClipboardCheck className="h-4 w-4 text-brand-teal" /> 6 learner personas</span>
             <span className="flex items-center gap-2"><Bot className="h-4 w-4 text-brand-teal" /> 8-module readiness journey</span>
           </div>

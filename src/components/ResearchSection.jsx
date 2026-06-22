@@ -13,7 +13,7 @@ export default function ResearchSection() {
         <SectionHeading
           eyebrow="Research and Needs Analysis"
           heading="How the learning need was identified"
-          subheading="Zohapo is not driven by technology alone. The design was shaped by a structured needs analysis spanning desk research, stakeholder reflection and learner-level investigation."
+          subheading="Zohapo is not driven by technology alone. The design was shaped by a structured needs analysis spanning desk research, stakeholder reflection and learner level investigation."
           align="center"
         />
 

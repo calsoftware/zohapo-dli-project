@@ -12,7 +12,7 @@ export default function HowSection() {
         <SectionHeading
           eyebrow="The How of Learning"
           heading="A Blended Flipped Classroom Model"
-          subheading="Most learning happens asynchronously on Zohapo. The face-to-face element becomes a workshop — informed by real learner data — rather than a traditional tutor-led lesson."
+          subheading="Most learning happens asynchronously on Zohapo. The face to face element becomes a workshop, informed by real learner data, rather than a traditional tutor led lesson."
           align="center"
         />
 
@@ -80,8 +80,8 @@ export default function HowSection() {
           Flow Model: Core and Spoke
         </h3>
         <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600">
-          All learners follow the same eight-module core. The AI builds personalised spokes around
-          it — sector scenarios, examples and feedback tailored to each learner's goal.
+          All learners follow the same eight module core. The AI builds personalised spokes around
+          it, including sector scenarios, examples and feedback tailored to each learner's goal.
         </p>
 
         <div className="relative mt-12 flex justify-center">

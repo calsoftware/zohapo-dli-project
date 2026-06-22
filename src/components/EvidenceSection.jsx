@@ -13,7 +13,7 @@ export default function EvidenceSection() {
       <SectionHeading
         eyebrow="Evidence of Need"
         heading="Why Zohapo Matters Now"
-        subheading="A short, cited snapshot of the labour-market evidence behind Zohapo — not a long report."
+        subheading="A short, cited snapshot of the labour market evidence behind Zohapo, not a long report."
         align="center"
       />
 

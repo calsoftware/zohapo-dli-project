@@ -45,8 +45,8 @@ export default function WhatSection() {
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="The What of Learning"
-          heading="An eight-module employability readiness journey"
-          subheading="Zohapo does not teach the full technical content of each sector. It develops confidence, workplace understanding, communication, teamwork, problem solving, interview readiness and employability evidence — with the AI personalising examples to each learner's sector."
+          heading="An eight module employability readiness journey"
+          subheading="Zohapo does not teach the full technical content of each sector. It develops confidence, workplace understanding, communication, teamwork, problem solving, interview readiness and employability evidence, with the AI personalising examples to each learner's sector."
           align="center"
         />
 
@@ -64,7 +64,7 @@ export default function WhatSection() {
 
         <div className="mt-14">
           <h3 className="text-center font-display text-xl font-bold text-ink-900">
-            How content adapts across a mixed-sector cohort
+            How content adapts across a mixed sector cohort
           </h3>
           <div className="mt-6 overflow-hidden rounded-xl2 border border-slate-200 shadow-card">
             <table className="w-full text-left text-sm">
